@@ -107,4 +107,17 @@ This command when run in R will prompt an Shiny window to open. In this window, 
 
 Once you finish these two steps, click on the "Exit Set-up" button.
 
-5.
+5. Once this process is complete, go to your R/Rstudio window and run the following command to pull up the visualization application:
+
+```
+VirusSimulationR::LaunchGUI()
+```
+
+* When this window appears, you will notice there is a button labeled "Reload" at the top. If you choose to generate visualizations while students are still submitting data and your Google spreadsheet is continuing to change, you can click this button to pull the most recent data.
+
+* There are currently two visualization options: Histograms and Frequencies shown in separate tabs. Histograms will provide the counts (in number of students) for each possible number option during a given round. You must select the relevant Round and click "Get Round Histogram" to generate the plot. Frequencies will pull up a summary of the change in frequencies of each possible number across all rounds.
+
+
+
+
+
