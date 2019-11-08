@@ -103,6 +103,8 @@ This command when run in R will prompt an Shiny window to open. In this window, 
 
 * Navigate to the second step by pressing on the tab labeled "Google Sheet Connection." In the provided text field, enter the unique character string that will solely identify your Google spreadsheet in your Google drive storage. Click on the "Search" button to load up the Google sheet that this text pulls up and confirm that it matches your expectations. If you do not see any data load upon clicking "Search," you may have had multiple files that matched the file name you entered. Please double-check that your text is a unique identifier.
 
+* **If you have issues with the second step, please click on your R/RStudio window and check if any messages have appeared.** A prompt may have appeared in R that asks you for permissions to access your Google drive. Resolve this prompt to give the Shiny application the permissions it needs to pull your data.
+
 Once you finish these two steps, click on the "Exit Set-up" button.
 
 5.
