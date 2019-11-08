@@ -61,9 +61,20 @@ If the above commands run without error, you should have the latest version of V
 
 ## Running VirusSimulationR
 <a name="howtorun"></a>
-To run this Shiny application, you will need to have created a Google spreadsheet (ideally populated with a linked Google form) and a spreadsheet (.csv file format) matching identfiers to starting number assignments (Round 0 Numbers).
+To run this Shiny application, you will need to have created a Google spreadsheet (ideally populated with a linked Google form) and a spreadsheet (.csv file format) matching identfiers to starting number assignments (Round 0 Numbers) as described below.
 
-1. Set 
+1. Set up the number assignment spreadsheet, formatted as follows:
+
+| Name | Round0Num | Round0Loc |ou 
+|:----:|:---------:|:---------:|
+|  A   |     1     |  Region1  |
+|  B   |     0     |  Region1  |
+|  C   |     1     |  Region2  |
+|  D   |     2     |  Region2  |
+
+You might consider placing cards with all student assignments in the described area (e.g. put a card with A written on one side and 1 written on the back in Region1) before class begins, and ask students to pick up the card under their seat. **You must have this spreadsheet on your computer and be able to navigate to this file to load it into R.**
+
+2. Prepare a Google spreadsheet with the following format of questions:
 
 | Timestamp | Your Identifier | Round Number | Your New Number	| Your Location |	Their Identifier |
 |:---------:|:---------------:|:------------:|:----------------:|:-------------:|:----------------:|
@@ -72,11 +83,17 @@ To run this Shiny application, you will need to have created a Google spreadshee
 | 13:05:39  |        C        |       1      |         2        |    Region2    |         D        |
 | 13:05:58  |        D        |       1      |         2        |    Region2    |         C        |
 
+We recommend creating a Google form that asks the following questions: Your Identifier, Round Number, Your New Number, Your Location, and Their Identifier. It is highly recommended that you set up the Google form to validate certain responses (i.e. ensure that the entry to Your New Number is in fact a numeric value) and also to be formatted as a drop-down menu for constrained answers (i.e. Round Number provided with options for Round 1-9). **You must know the name for this spreadsheet (or at least a unique character substring of this file) so that you can navigate to it in R.**
 
-| Name | Round0Num | Round0Loc |
-|:----:|:---------:|:---------:|
-|  A   |     1     |  Region1  |
-|  B   |     0     |  Region1  |
-|  C   |     1     |  Region2  |
-|  D   |     2     |  Region2  |
+3. Load the VirusSimulationR package. Run the following commands after installing:
+
+```
+library(VirusSimulationR)
+```
+
+4. Run the set-up process within R (RStudio is recommended). RUn the following commands:
+
+```
+VirusSimulationR
+```
 
