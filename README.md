@@ -5,8 +5,8 @@ R code to run in-class activity
 [Installing VirusSimulationR](#install)  
 [Updating VirusSimulationR](#update)  
 [Running VirusSimulationR](#howtorun)  
-[Example Code for VirusSimulationR](#example)  
-[Authors and License](#info)  
+<!-- [Example Code for VirusSimulationR](#example) -->
+<!-- [Authors and License](#info) -->
 
 
 ## Getting Started
