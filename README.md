@@ -1,5 +1,5 @@
 # VirusSimulationR
-R code to run in-class activity
+Interactive group simulation activity for viral spread in R.
 
 # Navigation
 [Installing VirusSimulationR](#install)  
