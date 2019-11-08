@@ -94,6 +94,15 @@ library(VirusSimulationR)
 4. Run the set-up process within R (RStudio is recommended). RUn the following commands:
 
 ```
-VirusSimulationR
+setup <- VirusSimulationR::ConfigureApp()
 ```
 
+This command when run in R will prompt an Shiny window to open. In this window, you must complete two tasks.
+
+* While the tab "Number Assignments" is highlighted, load the number assignment spreadsheet. Click on the "Browse..." button and navigate to the correct csv file then click Open. Confirm that the data table that appears under "Original Number Assignments" is correct. If it shows up incorrectly, you may need to fix your csv file or navigate to a different file, using the "Browse..." button.
+
+* Navigate to the second step by pressing on the tab labeled "Google Sheet Connection." In the provided text field, enter the unique character string that will solely identify your Google spreadsheet in your Google drive storage. Click on the "Search" button to load up the Google sheet that this text pulls up and confirm that it matches your expectations. If you do not see any data load upon clicking "Search," you may have had multiple files that matched the file name you entered. Please double-check that your text is a unique identifier.
+
+Once you finish these two steps, click on the "Exit Set-up" button.
+
+5.
