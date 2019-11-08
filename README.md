@@ -2,7 +2,7 @@
 R code to run in-class activity
 
 # Navigation
-[Getting Started](#install)  
+[Installing VirusSimulationR](#install)  
 [Updating VirusSimulationR](#update)  
 [Running VirusSimulationR](#howtorun)  
 [Example Code for VirusSimulationR](#example)  
@@ -17,7 +17,7 @@ The instructions below demonstrate how to install this package directly from Git
 ### Software and Package Prerequisites:
 Install version 3.6.0 or later of R. Users can install R by downloading the appropriate R-x.y.z.tar.gz  file from http://www.r-project.org and following the system-specific instructions. VirusSimulationR was developed and tested on version 3.6.0 of R. As of this release, we recommend using version 3.6.0.
 
-VirusSimulationR depends on the following R libraries: ?? (version). The versions provided are the R package versions for which this VirusSimulationR code has been tested.
+VirusSimulationR depends on the following R libraries: RColorBrewer (version 1.1.2), ggplot2 (version 3.2.1), googledrive (version 1.0.0), googlesheets4 (version 0.1.0), reshape (version 0.8.8), and shiny (version 1.3.2). The versions provided are the R package versions for which this VirusSimulationR code has been tested.
 
 In order to install a package from github, you will need the devtools package. You can install this package with the following commands:
 
@@ -29,6 +29,11 @@ library(devtools)
 VirusSimulationR package depends on several packages, which can be installed using the below commands:
 
 ```
+install.packages("RColorBrewer") 
+install.packages("ggplot2") 
+install.packages("googledrive") 
+install.packages("googlesheets4") 
+install.packages("reshape") 
 install.packages("shiny") 
 ```
 
