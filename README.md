@@ -2,7 +2,7 @@
 R code to run in-class activity
 
 # Navigation
-[Getting Started: VirusSimulationR FLOWMAPR](#install)  
+[Getting Started](#install)  
 [Updating VirusSimulationR](#update)  
 [Running VirusSimulationR](#howtorun)  
 [Example Code for VirusSimulationR](#example)  
