@@ -65,7 +65,7 @@ To run this Shiny application, you will need to have created a Google spreadshee
 
 1. Set up the number assignment spreadsheet, formatted as follows:
 
-| Name | Round0Num | Round0Loc |ou 
+| Name | Round0Num | Round0Loc | 
 |:----:|:---------:|:---------:|
 |  A   |     1     |  Region1  |
 |  B   |     0     |  Region1  |
