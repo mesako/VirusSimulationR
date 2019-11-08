@@ -61,12 +61,22 @@ If the above commands run without error, you should have the latest version of V
 
 ## Running VirusSimulationR
 <a name="howtorun"></a>
+To run this Shiny application, you will need to have created a Google spreadsheet (ideally populated with a linked Google form) and a spreadsheet (.csv file format) matching identfiers to starting number assignments (Round 0 Numbers).
 
+1. Set 
 
 | Timestamp | Your Identifier | Round Number | Your New Number	| Your Location |	Their Identifier |
 |:---------:|:---------------:|:------------:|:----------------:|:-------------:|:----------------:|
-| 13:04:26  |        A        |       1      |         0        |    Region2    |         B        |
-| 13:05:01  |        B        |       1      |         0        |    Region2    |         A        |
-| 13:05:39  |        C        |       1      |         2        |    Region1    |         D        |
-| 13:05:58  |        D        |       1      |         2        |    Region1    |         C        |
+| 13:04:26  |        A        |       1      |         0        |    Region1    |         B        |
+| 13:05:01  |        B        |       1      |         0        |    Region1    |         A        |
+| 13:05:39  |        C        |       1      |         2        |    Region2    |         D        |
+| 13:05:58  |        D        |       1      |         2        |    Region2    |         C        |
+
+
+| Name | Round0Num | Round0Loc |
+|:----:|:---------:|:---------:|
+|  A   |     1     |  Region1  |
+|  B   |     0     |  Region1  |
+|  C   |     1     |  Region2  |
+|  D   |     2     |  Region2  |
 
