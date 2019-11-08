@@ -1,0 +1,13 @@
+Package: VirusSimulationR
+Title: Interactive group simulation activity for viral spread in R.
+Version: 1.0.0
+Authors@R: 
+    person(given = "Melissa",
+           family = "Ko",
+           role = c("aut", "cre"),
+           email = "mesako@stanford.edu")
+Description: Shiny application that pulls data from a Google sheet populated by student-submitted responses from an in-class viral spread simulation activity. Application establishes connection to Google and starting number assignments using the configuration app, while the main app loads the data and provides a GUI for generating visualizations.
+License: TBD
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
