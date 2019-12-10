@@ -109,8 +109,8 @@ This command when run in R will prompt an Shiny window to open. In this window, 
 
 For example, entering "Branner, FloMo, Roble, Stern, Toyon, Wilbur, Crothers, Lagunita, Sterling" in the text box will produce the following map:
 
-|:----------:|:----------:|:----------:|
 |  Crothers  |  Lagunita  |  Sterling  |
+|:----------:|:----------:|:----------:|
 |    Stern   |    Toyon   |   Wilbur   |
 |   Branner  |    FloMo   |    Roble   |
 
