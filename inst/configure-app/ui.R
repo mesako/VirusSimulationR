@@ -1,7 +1,5 @@
 
 ui <- fluidPage(
-  # titlePanel("THINK 61 Day 1 Set-up",
-  #            windowTitle = "THINK 61 Day 1 Set-up"),
   navbarPage("THINK 61 Day 1 Set-up",
     tabPanel("Number Assignments",
              sidebarLayout(
@@ -26,6 +24,20 @@ ui <- fluidPage(
                mainPanel(
                  h4("File Preview"),
                  tableOutput("sheetdata")
+               )
+             )),
+    tabPanel("Room Set-up",
+             sidebarLayout(
+               sidebarPanel(
+                 h4("Labels for Room Regions"),
+                 p("Please enter room labels separated by commas."),
+                 textInput("roomlabels", "Labels", value = "", width = NULL,
+                           placeholder = "Branner, FloMo, Roble, Stern, Toyon, Wilbur, Crothers, Lagunita, Sterling"),
+                 actionButton("loadroom","Load")
+               ),
+               mainPanel(
+                 h4("Room Preview"),
+                 plotOutput("roompreview")
                )
              ))
   ),

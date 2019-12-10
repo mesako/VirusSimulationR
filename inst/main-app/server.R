@@ -23,7 +23,7 @@ server <- function(input, output) {
 
   showhist <- eventReactive(input$hist, {
     VirusSimulationR:::PlotNumberCounts(react.vals$freqdata,
-                                        as.numeric(input$roundnum),
+                                        as.numeric(input$roundnum1),
                                         VirusSimulationR:::GetPalette(react.vals$numround))
   })
   output$showhist <- renderPlot({
@@ -38,19 +38,20 @@ server <- function(input, output) {
     showfreq()
   })
 
-  # output$mydata <- renderDataTable(react.vals$data)
-  # output$numassign <- renderDataTable(react.vals$numassign)
-  # output$histdata <- renderDataTable(react.vals$histdata)
-  # output$freqdata <- renderDataTable(react.vals$freqdata)
-  output$numrefresh <- renderText(input$reload)
-  output$roundnum <- renderText(input$roundnum)
-}
+  showspatial <- eventReactive(input$map, {
+    results <- VirusSimulationR:::GenerateSpatialMap(react.vals$data, setup$roomlabels,
+                                                     react.vals$roundoptions)
+    roommap <- results[[1]]
+    spatialdata <- results[[2]]
+    positions <- results[[3]]
+    roundmap <- VirusSimulationR:::PlotSpatial(spatialdata, positions, as.numeric(input$roundnum2), roommap)
+    roundmap
+  })
+  output$showspatial <- renderPlot({
+    showspatial()
+  })
 
-# server <- function(input, output) {
-#   react.vals <- reactiveValues()
-#   observeEvent(input$reload, {
-#     react.vals$data <- read_sheet(setup$google.sheet$id, sheet = 1)
-#   }, ignoreNULL = FALSE)
-#   output$mydata <- renderDataTable(react.vals$data)
-#   output$numrefresh <- renderText(input$reload)
-# }
+  output$numrefresh <- renderText(input$reload)
+  output$roundnum1 <- renderText(input$roundnum1)
+  output$roundnum2 <- renderText(input$roundnum2)
+}

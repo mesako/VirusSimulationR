@@ -38,6 +38,32 @@ GetFreqData <- function(hist.data, num.rounds) {
   return(freq.over.round)
 }
 
+GetSpatialData <- function(form.data, round.options) {
+  all.loc <- form.data[, grep(colnames(form.data), pattern = "Loc")]
+  all.num <- form.data[, sapply(form.data, FUN = is.numeric)]
+  combined <- cbind(all.loc, all.num)
+
+  temp <- c("Round0", round.options)
+  temp <- temp[temp %in% colnames(all.num)]
+  possible.loc <- unique(as.vector(t(all.loc)))
+  spatial.data <- matrix(NA, nrow = length(possible.loc),
+                         ncol = length(temp))
+  spatial.data <- as.data.frame(spatial.data)
+  rownames(spatial.data) <- possible.loc
+  colnames(spatial.data) <- temp
+  for (i in possible.loc) {
+    for (j in temp) {
+      this.round <- paste0(j, "Loc", collapse = "")
+      values <- combined[combined[, this.round] == i, j]
+      if (length(values) > 1) {
+        spatial.data[which(rownames(spatial.data) == i), j] <- sum(values == 0)
+      }
+    }
+  }
+  spatial.data[is.na(spatial.data)] <- 0
+  return(spatial.data)
+}
+
 GetNumRounds <- function(round.options) {
   num.rounds <- gsub(round.options, pattern = "Round", replacement = "")
   num.rounds <- max(as.numeric(num.rounds))

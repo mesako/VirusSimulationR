@@ -21,7 +21,6 @@ server <- function(input, output, session) {
     mysheet <- drive_find(input$sheetname, type = "spreadsheet")
     mysheet
   })
-
   sheetdata <- eventReactive(input$searchsheets, {
     mysheet <- getsheetname()
     if (nrow(mysheet) == 1) {
@@ -30,13 +29,28 @@ server <- function(input, output, session) {
       return(NULL)
     }
   })
-
   output$sheetdata <- renderTable({
     sheetdata()
   })
 
+  getroomlabels <- reactive({
+    roomlabels <- input$roomlabels
+    roomlabels <- unlist(strsplit(roomlabels, split = ","))
+    roomlabels <- trimws(roomlabels)
+    roomlabels
+  })
+  roompreview <- eventReactive(input$loadroom, {
+    roomlabels <- getroomlabels()
+    roommap <- VirusSimulationR:::ShowRoomPreview(roomlabels)
+    roommap
+  })
+  output$roompreview <- renderPlot({
+    roompreview()
+  })
+
   observe({
     if (input$closebutton > 0) stopApp(list(num.assign = filedata(),
-                                            google.sheet = getsheetname()))
+                                            google.sheet = getsheetname(),
+                                            roomlabels = getroomlabels()))
   })
 }
