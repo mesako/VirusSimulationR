@@ -105,7 +105,17 @@ This command when run in R will prompt an Shiny window to open. In this window, 
 
 * **If you have issues with the second step, please click on your R/RStudio window and check if any messages have appeared.** A prompt may have appeared in R that asks you for permissions to access your Google drive. Resolve this prompt to give the Shiny application the permissions it needs to pull your data.
 
-Once you finish these two steps, click on the "Exit Set-up" button.
+* Navigate to the third step by pressing on the tab labeled "Labels for Room Regions." In the provided text field, enter the names of the nine room regions (forming a 3 x 3 grid) with each name separated by a comma. Click on the "Load" button to load up a preview of the room layout. You may need to change the order that the names appear in your list if the label does not show up in the correct box on the grid.
+
+For example, entering "Branner, FloMo, Roble, Stern, Toyon, Wilbur, Crothers, Lagunita, Sterling" in the text box will produce the following map:
+
+|:----------:|:----------:|:----------:|
+|  Crothers  |  Lagunita  |  Sterling  |
+|    Stern   |    Toyon   |   Wilbur   |
+|   Branner  |    FloMo   |    Roble   |
+
+
+Once you finish these three steps, click on the "Exit Set-up" button.
 
 5. Once this process is complete, go to your R/Rstudio window and run the following command to pull up the visualization application:
 
@@ -115,7 +125,7 @@ VirusSimulationR::LaunchGUI()
 
 * When this window appears, you will notice there is a button labeled "Reload" at the top. If you choose to generate visualizations while students are still submitting data and your Google spreadsheet is continuing to change, you can click this button to pull the most recent data.
 
-* There are currently two visualization options: Histograms and Frequencies shown in separate tabs. Histograms will provide the counts (in number of students) for each possible number option during a given round. You must select the relevant Round and click "Get Round Histogram" to generate the plot. Frequencies will pull up a summary of the change in frequencies of each possible number across all rounds.
+* There are currently three visualization options: Histograms, Frequencies, and Spatial shown in separate tabs. Histograms will provide the counts (in number of students) for each possible number option during a given round. You must select the relevant Round and click "Get Round Histogram" to generate the plot. Frequencies will pull up a summary of the change in frequencies of each possible number across all rounds. Spatial will show where zeroes appear in the different regions during each round. You must select the relevant Round and click "Get Round Map" to generate the plot.
 
 
 
