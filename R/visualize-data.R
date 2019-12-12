@@ -159,7 +159,7 @@ PlotSpatial <- function(spatial.data, positions, round.num, room.map) {
   temp.plot <- room.map + geom_map(aes(map_id = Loc, fill = spatial.data[, paste0("Round", round.num, collapse = "")]), map = positions) +
     geom_text(aes(label = Loc, x = label.x, y = label.y)) + labs(fill = paste0("Round", round.num, collapse = "")) +
     geom_jitter(data = point.data, aes(x = point.x, y = point.y), stat = "identity",
-                width = 0.25, height = 0.25)
+                width = 0.25, height = 0.25) + scale_fill_gradient(low = "#FFFFFF", high = "#D06666")
   print(temp.plot)
   return(temp.plot)
 }
