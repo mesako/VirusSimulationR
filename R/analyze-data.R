@@ -1,15 +1,8 @@
 
-GetHistData <- function(reshaped.data) {
-  hist.data <- melt(reshaped.data, id.vars = "Name")
+GetHistData <- function(reshaped.data, round.options) {
+  round.options <- c("Round0", round.options)
+  hist.data <- melt(reshaped.data, measure.vars = round.options, na.rm = FALSE)
   return(hist.data)
-}
-
-GetPossibleNum <- function() {
-  possible.num <- 2 ^ (0:10)
-  possible.num[which(possible.num > 1000)] <- 1000
-  possible.num <- unique(possible.num)
-  possible.num <- c(0, possible.num)
-  return(possible.num)
 }
 
 InitiateFreqData <- function(possible.num) {
@@ -42,10 +35,10 @@ GetSpatialData <- function(form.data, round.options) {
   all.loc <- form.data[, grep(colnames(form.data), pattern = "Loc")]
   all.num <- form.data[, sapply(form.data, FUN = is.numeric)]
   combined <- cbind(all.loc, all.num)
-
   temp <- c("Round0", round.options)
   temp <- temp[temp %in% colnames(all.num)]
   possible.loc <- unique(as.vector(t(all.loc)))
+  possible.loc <- na.omit(possible.loc)
   spatial.data <- matrix(NA, nrow = length(possible.loc),
                          ncol = length(temp))
   spatial.data <- as.data.frame(spatial.data)
@@ -55,6 +48,7 @@ GetSpatialData <- function(form.data, round.options) {
     for (j in temp) {
       this.round <- paste0(j, "Loc", collapse = "")
       values <- combined[combined[, this.round] == i, j]
+      values <- na.omit(values)
       if (length(values) > 1) {
         spatial.data[which(rownames(spatial.data) == i), j] <- sum(values == 0)
       }
