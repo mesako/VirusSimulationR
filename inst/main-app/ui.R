@@ -3,7 +3,7 @@ ui <- fluidPage(
   fluidRow(column(12, align = "right", offset = 0,
                   actionButton(inputId = "reload", label = "Reload Data")
   )),
-  navbarPage("THINK 61 Day 1 Activity",
+  navbarPage("Viral Spread Simulation Activity",
              tabPanel("Histograms",
                       sidebarLayout(
                         sidebarPanel(h4("Simulation Data"),

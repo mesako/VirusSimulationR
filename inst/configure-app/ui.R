@@ -1,6 +1,6 @@
 
 ui <- fluidPage(
-  navbarPage("THINK 61 Day 1 Set-up",
+  navbarPage("Viral Spread Simulation Set-up",
     tabPanel("Number Assignments",
              sidebarLayout(
                sidebarPanel(
